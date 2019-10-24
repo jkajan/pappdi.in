@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Joke from './components/joke'
-import JokeForm from './components/jokeForm'
+import Joke from './components/Joke'
+import JokeForm from './components/JokeForm'
 
 
 const App = () => {
   const [jokes, setJokes] = useState([])
   const [joke, setJoke] = useState('')
-  //useEffect
+  //useEffect that fetches jokes from the backend
   useEffect(() => {
     console.log('useEffect NYI')
   },[])
@@ -14,7 +14,7 @@ const App = () => {
   const handlePapp = () => {
     console.log('NYI')
   }
-  //the function to generate a joke (NYI)
+  //the function to generate a joke
   const handleGen = () => {
     console.log('NYI')
   }
