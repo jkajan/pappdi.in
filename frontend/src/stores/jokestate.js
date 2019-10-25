@@ -1,5 +1,3 @@
-import jokeService from '../services/joke'
-
 const initialState = []
 
 const jokeStore = (state = initialState, action) => {
