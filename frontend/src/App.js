@@ -2,18 +2,29 @@ import React, { useState, useEffect } from 'react'
 import Joke from './components/Joke'
 import JokeForm from './components/JokeForm'
 import { createStore } from 'redux'
-import randjoke from './stores/jokestate'
+import jokestate from './stores/jokestate'
 import { useField } from './hooks'
+import jokeService from './services/joke'
 
-const store = createStore(randjoke)
+const store = createStore(jokestate)
 
 const App = () => {
   const [joke,setJoke] = useState('')
   const input = useField('text')
+  //TODO: fundera på varför proxyn inte funkar & varför jokestate har sluta pelittää (kan dom inte vara objekt?)
   //useEffect that fetches jokes from the backend
-  useEffect(() => {
-    store.dispatch({type: 'INIT'})
-  },[])
+  /*useEffect(() => {
+    const get = async() => {
+      const jokes = await jokeService.getAll()
+      jokes.map(j => {
+        store.dispatch({
+          type: 'ADD',
+          data: j
+        })
+      })
+    }
+   get()
+  },[])*/
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = store.getState()

@@ -1,16 +1,12 @@
-const initialState = [
-  "Joke 1",
-  "Joke 2",
-  "Joke 3"
-]
+import jokeService from '../services/joke'
 
-const jokeStore = (state = initialState, action) => {
+const initialState = []
+
+const jokeStore = async(state = initialState, action) => {
   console.log(action)
   switch(action.type) {
-    case 'INIT':
-    console.log('state INIT NYI')
-    return state
     case 'ADD':
+    console.log(state)
       return state.concat(action.data)
     default:
   }
