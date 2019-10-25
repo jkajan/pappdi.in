@@ -11,20 +11,25 @@ const store = createStore(jokestate)
 const App = () => {
   const [joke,setJoke] = useState('')
   const input = useField('text')
-  //TODO: fundera på varför proxyn inte funkar & varför jokestate har sluta pelittää (kan dom inte vara objekt?)
+  //TODO: fundera på varför proxyn inte funkar & varför min MONGODB_URI e whack
   //useEffect that fetches jokes from the backend
-  /*useEffect(() => {
+  useEffect(() => {
     const get = async() => {
+      console.log('get')
       const jokes = await jokeService.getAll()
-      jokes.map(j => {
+      store.dispatch({
+        type: 'ADD',
+        data: jokes
+      })
+      /*jokes.map(j => {
         store.dispatch({
           type: 'ADD',
           data: j
         })
-      })
+      })*/
     }
    get()
-  },[])*/
+  },[])
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = store.getState()
