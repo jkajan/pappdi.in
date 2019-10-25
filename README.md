@@ -39,32 +39,28 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Install
 
-* Clone the repository
+### `Clone the repository`
 
-* Install the required packages
+### `Install the required packages`
 
-You have to run
+You have to run 'npm install' both in the frontend and the backend.
 
-### `npm install`
-
-both in the frontend and the backend.
-
-* Setup your .env
+### `Setup your .env`
 
 Create a .env file in the backend root. The required variables are:
 
-### `PORT=...`
+* PORT=...
 
 The port that the backend should run on (cannot be 3000)
 
-### `MONGODB_URI=...`
+* MONGODB_URI=...
 
 Your MongoDB import string.
 
-* Start the development servers
+### `Start the development servers`
 
 Frontend:
-### `npm run`
+'npm run'
 
 Backend:
-### `npm run watch`
+'npm run watch'
