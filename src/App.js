@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import Joke from './components/Joke'
 import JokeForm from './components/JokeForm'
+import { createStore } from 'redux'
+import randjoke from './stores/jokestate'
 
+const store = createStore(randjoke)
 
 const App = () => {
-  const [jokes, setJokes] = useState([])
   const [joke, setJoke] = useState('')
   //useEffect that fetches jokes from the backend
   useEffect(() => {
-    console.log('useEffect NYI')
+    store.dispatch({type: 'INIT'})
   },[])
   //the function to fetch a random joke
   const handlePapp = () => {
-    console.log('NYI')
+    const jokes = store.getState()
+    const rand = Math.floor(Math.random()*(jokes.length))
+    setJoke(jokes[rand])
   }
   //the function to generate a joke
   const handleGen = () => {
@@ -25,7 +29,7 @@ const App = () => {
       <button onClick={handlePapp}>Random favorit i repris</button>
       <Joke joke={joke} />
       <p>Skicka in en favorit!</p>
-      <JokeForm />
+      <JokeForm store={store} />
     </div>
   )
 }
