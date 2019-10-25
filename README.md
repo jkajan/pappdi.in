@@ -37,32 +37,34 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Clone the repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Install the required packages
 
-### Code Splitting
+You have to run
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### `npm install`
 
-### Analyzing the Bundle Size
+both in the frontend and the backend.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* Setup your .env
 
-### Making a Progressive Web App
+Create a .env file in the backend root. The required variables are:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### `PORT=...`
 
-### Advanced Configuration
+The port that the backend should run on (cannot be 3000)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### `MONGODB_URI=...`
 
-### Deployment
+Your MongoDB import string.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* Start the development servers
 
-### `npm run build` fails to minify
+Frontend:
+### `npm run`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Backend:
+### `npm run watch`
