@@ -10,8 +10,9 @@ const store = createStore(jokestate)
 
 const App = () => {
   const [joke,setJoke] = useState('')
-  const input = useField('text')
-  //TODO: fundera på varför proxyn inte funkar & varför min MONGODB_URI e whack
+  const inputContent = useField('text')
+  const inputAuthor = useField('text')
+  //TODO: fundera på varför min MONGODB_URI e whack
   //useEffect that fetches jokes from the backend
   useEffect(() => {
     const get = async() => {
@@ -47,7 +48,7 @@ const App = () => {
       <button onClick={handlePapp}>Random favorit i repris</button>
       <Joke joke={joke} />
       <p>Skicka in en favorit!</p>
-      <JokeForm store={store} input={input} />
+      <JokeForm store={store} inputContent={inputContent} inputAuthor={inputAuthor} />
     </div>
   )
 }
