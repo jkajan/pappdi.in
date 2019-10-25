@@ -1,6 +1,5 @@
 //implement the form to submit jokes here
 import React from 'react'
-import { useField } from '../hooks'
 
 const JokeForm = ({store, input}) => {
 
