@@ -1,7 +1,8 @@
 //implement the form to submit jokes here
 import React from 'react'
+import { useField } from '../hooks'
 
-const JokeForm = ({store}) => {
+const JokeForm = ({store, input}) => {
 
   const handleSumbit = async(event) => {
     event.preventDefault()
@@ -9,13 +10,13 @@ const JokeForm = ({store}) => {
       type: 'ADD',
       data: event.target[0].value
     })
-    console.log(store.getState())
+    input.reset()
   }
 
   return(
     <div>
       <form onSubmit={handleSumbit}>
-        <textarea name="input" rows="10" columns="50">
+        <textarea name="input" rows="10" columns="50" onChange={input.onChange} value={input.value}>
         </textarea>
         <br></br>
         <button type="submit">Submit</button>

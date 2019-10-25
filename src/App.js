@@ -3,11 +3,13 @@ import Joke from './components/Joke'
 import JokeForm from './components/JokeForm'
 import { createStore } from 'redux'
 import randjoke from './stores/jokestate'
+import { useField } from './hooks'
 
 const store = createStore(randjoke)
 
 const App = () => {
-  const [joke, setJoke] = useState('')
+  const [joke,setJoke] = useState('')
+  const input = useField('text')
   //useEffect that fetches jokes from the backend
   useEffect(() => {
     store.dispatch({type: 'INIT'})
@@ -29,9 +31,9 @@ const App = () => {
       <button onClick={handlePapp}>Random favorit i repris</button>
       <Joke joke={joke} />
       <p>Skicka in en favorit!</p>
-      <JokeForm store={store} />
+      <JokeForm store={store} input={input} />
     </div>
   )
 }
 
-export default App;
+export default App
