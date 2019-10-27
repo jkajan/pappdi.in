@@ -29,11 +29,21 @@ const App = () => {
   },[])
   //Placeholder Papps
   const papps = [
-    {id: 1, p:"Papp1"},
-    {id: 2, p:"Papp2"},
-    {id: 3, p:"Papp3"},
-    {id: 4, p:"Papp4"},
-    {id: 5, p:"Papp5"}
+    {
+      id: 1,
+      p:"/static/father1.png",
+      votes: 0
+    },
+    {
+      id: 2,
+      p:"/static/father2.png",
+      votes: 0
+    },
+    {
+      id: 3,
+      p:"/static/father3.png",
+      votes: 0
+    }
   ]
   //the function to fetch a random joke
   const handlePapp = () => {
