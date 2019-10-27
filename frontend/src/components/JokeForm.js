@@ -25,7 +25,7 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
         <textarea name="input" rows="10" columns="50" onChange={inputContent.onChange} value={inputContent.value}>
         </textarea>
         <br></br>
-        <label>Vem i frick e du?!</label>
+        <label>Vem i frick e du?!</label><br></br>
         <input value={inputAuthor.value} onChange={inputAuthor.onChange}></input>
         <br></br>
         <button type="submit">Submit</button>
