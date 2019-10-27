@@ -5,6 +5,7 @@ import { createStore } from 'redux'
 import jokestate from './stores/jokestate'
 import { useField } from './hooks'
 import jokeService from './services/joke'
+import './App.css'
 
 const store = createStore(jokestate)
 

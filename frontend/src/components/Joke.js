@@ -4,7 +4,7 @@ import React from 'react'
 const Joke = ({joke}) => {
   if (joke.content) {
     return(
-      <div>{joke.content}<br></br>Submitted by: {joke.author}</div>
+      <div className="jokeContent">{joke.content}<br></br>Submitted by: {joke.author}</div>
     )
   } else {
     return(<div></div>)
