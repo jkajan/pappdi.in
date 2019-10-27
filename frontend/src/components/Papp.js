@@ -3,7 +3,7 @@ import React from 'react'
 const Papp = ({papp}) => {
   return (
     <div className="item">
-    <img src={papp} alt={papp}></img>
+    <img src={papp.p} alt={papp}></img>
     </div>
   )
 }

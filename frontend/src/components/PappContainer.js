@@ -7,7 +7,7 @@ const PappContainer = ({papps}) => {
     <div>
       <header className="header">Rösta på din favoritpapp!</header>
       <div className="wrapper">
-        {papps.map(p => <Papp key={p.id} papp={p.p} />)}
+        {papps.map(p => <Papp key={p.id} papp={p} />)}
       </div>
     </div>
   )
