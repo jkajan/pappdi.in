@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Joke from './components/Joke'
 import JokeForm from './components/JokeForm'
+import PappContainer from './components/PappContainer'
 import { createStore } from 'redux'
 import jokestate from './stores/jokestate'
 import { useField } from './hooks'
@@ -26,6 +27,14 @@ const App = () => {
     }
    get()
   },[])
+  //Placeholder Papps
+  const papps = [
+    {id: 1, p:"Papp1"},
+    {id: 2, p:"Papp2"},
+    {id: 3, p:"Papp3"},
+    {id: 4, p:"Papp4"},
+    {id: 5, p:"Papp5"}
+  ]
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = store.getState()
@@ -37,13 +46,15 @@ const App = () => {
     console.log('NYI')
   }
   return (
-    <div>
+    <div className="container">
       <div>Hello Papps! Välkommen till pappdi.in!</div>
       <button onClick={handleGen}>Generera ett 'Papp' skämt!</button>
       <button onClick={handlePapp}>Random favorit i repris</button>
       <Joke joke={joke} />
       <p>Skicka in en favorit!</p>
       <JokeForm store={store} inputContent={inputContent} inputAuthor={inputAuthor} />
+      <br></br>
+      <PappContainer papps={papps} />
     </div>
   )
 }
