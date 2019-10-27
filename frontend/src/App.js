@@ -23,12 +23,6 @@ const App = () => {
         type: 'ADD',
         data: jokes
       })
-      /*jokes.map(j => {
-        store.dispatch({
-          type: 'ADD',
-          data: j
-        })
-      })*/
     }
    get()
   },[])
