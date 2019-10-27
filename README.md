@@ -49,9 +49,9 @@ You have to run 'npm install' both in the frontend and the backend.
 
 Create a .env file in the backend root. The required variables are:
 
-* PORT=...
+* PORT=3003
 
-The port that the backend should run on (cannot be 3000)
+The port that the backend should run on.
 
 * MONGODB_URI=...
 
