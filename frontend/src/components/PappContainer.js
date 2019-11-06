@@ -7,7 +7,8 @@ const PappContainer = ({store}) => {
     <div>
       <header className="header">Rösta på din favoritpapp!</header>
       <div className="wrapper">
-        {store.getState().papp.map(p => <Papp key={p.id} papp={p} />)}
+        {store.getState().papp.map(p => <Papp
+          key={p.id} papp={p} store={store} />)}
       </div>
     </div>
   )
