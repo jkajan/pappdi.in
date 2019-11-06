@@ -2,7 +2,7 @@ import React from 'react'
 
 //the joke component
 const Joke = ({joke}) => {
-  if (joke.content) {
+  if (joke) {
     return(
       <div className="jokeContent">{joke.content}<br></br>Submitted by: {joke.author}</div>
     )
