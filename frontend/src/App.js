@@ -41,11 +41,12 @@ const App = (props) => {
   }
   return (
     <div className="container">
-      <div>Hello Papps! Välkommen till pappdi.in!</div>
-      <button onClick={handleGen}>Generera ett 'Papp' skämt!</button>
-      <button onClick={handlePapp}>Random favorit i repris</button>
+      <div className="header">Hello Papps! Välkommen till pappdi.in!</div>
+      <div className="buttonContainer">
+        <button onClick={handleGen}>Generera ett 'Papp' skämt!</button>
+        <button onClick={handlePapp}>Random favorit i repris</button>
+      </div>
       <Joke joke={joke} />
-      <p>Skicka in en favorit!</p>
       <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
       <br></br>
       <PappContainer store={props.store} />

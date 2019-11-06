@@ -20,15 +20,16 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
   }
 
   return(
-    <div>
+    <div className="jokeForm">
+      <p className="marginLeft">Skicka in en favorit!</p>
       <form onSubmit={handleSumbit}>
         <textarea name="input" rows="10" columns="50" onChange={inputContent.onChange} value={inputContent.value}>
         </textarea>
         <br></br>
-        <label>Vem i frick e du?!</label><br></br>
-        <input value={inputAuthor.value} onChange={inputAuthor.onChange}></input>
+        <label className="marginLeft">Vem i frick e du?!</label><br></br>
+        <input className="author" value={inputAuthor.value} onChange={inputAuthor.onChange}></input>
         <br></br>
-        <button type="submit">Submit</button>
+        <button className="marginLeft" type="submit">Submit</button>
       </form>
     </div>
   )

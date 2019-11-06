@@ -2,10 +2,56 @@
   white-space: pre-line;
 }
 
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0px;
+}
+
+#root {
+  height: 100%;
+  padding: 0;
+  margin: 0px;
+}
+
+body {
+  background-image: url("/static/background.jpg");
+  background-color: #cccccc;
+  background-size: 100%;
+  font-family: Montserrat-Light, sans-serif;
+}
+
+textarea {
+  margin-left: 1%;
+  width: 97%;
+  resize: none;
+}
+
 .container {
+  padding: 0;
+  background-color: rgba(255,255,255,0.8);
+  background-size: 100%;
+  margin-bottom: 0px;
   margin: auto;
   width: 100%;
   max-width: 768px;
+  min-height: 100%;
+  text-align: center;
+}
+
+.jokeForm {
+  text-align: left;
+}
+
+.author {
+  width: 50%;
+  margin-left: 1%;
+  text-align: left;
+}
+
+.marginLeft {
+  margin-left: 1%;
+  text-align: left;
 }
 
 .wrapper {
@@ -17,6 +63,8 @@
 
 .header {
   text-align: center;
+  font-weight: bold;
+  font-size: 32px;
 }
 
 .item {
@@ -35,6 +83,11 @@
 .noclick {
   pointer-events: none;
 }
+
+.buttonContainer {
+  text-align: center;
+}
+
 img {
   max-width: 200px;
   max-height: 150px;
