@@ -3,14 +3,15 @@ import Papp from './Papp'
 
 //the container for all Papps
 const PappContainer = ({store}) => {
-  const [visible, setVisible] = useState(false)
-  const show = { display: visible ? '' : 'none'}
+  const [voted, setVoted] = useState(false)
+  const click = { click: voted ? 'item noclick' : ' item click' }
+  const show = { display: voted ? '' : 'none' }
   const handleVote = (id) => {
     store.dispatch({
       type:'PAPP_VOTE',
       data: id
     })
-    setVisible(true)
+    setVoted(true)
   }
 
   return (
@@ -18,7 +19,7 @@ const PappContainer = ({store}) => {
       <header className="header">Rösta på din favoritpapp!</header>
       <div className="wrapper">
         {store.getState().papp.map(p => <Papp
-          key={p.id} papp={p} show={show} handleVote={handleVote} />)}
+          key={p.id} papp={p} show={show} click={click} handleVote={handleVote} />)}
       </div>
     </div>
   )

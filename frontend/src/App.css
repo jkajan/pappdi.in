@@ -28,6 +28,13 @@
   vertical-align: middle;
 }
 
+.click {
+  pointer-events: auto;
+}
+
+.noclick {
+  pointer-events: none;
+}
 img {
   max-width: 200px;
   max-height: 150px;
