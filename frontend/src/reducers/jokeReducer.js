@@ -1,6 +1,6 @@
 const initialState = []
 
-const jokeStore = (state = initialState, action) => {
+const jokeReducer = (state = initialState, action) => {
   console.log(action)
   switch(action.type) {
     case 'JOKE_ADD':
@@ -10,4 +10,4 @@ const jokeStore = (state = initialState, action) => {
   return state
 }
 
-export default jokeStore
+export default jokeReducer
