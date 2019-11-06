@@ -2,15 +2,12 @@ import React, { useState, useEffect } from 'react'
 import Joke from './components/Joke'
 import JokeForm from './components/JokeForm'
 import PappContainer from './components/PappContainer'
-import { createStore } from 'redux'
-import jokestate from './stores/jokestate'
 import { useField } from './hooks'
 import jokeService from './services/joke'
+import pappService from './services/papp'
 import './App.css'
 
-const store = createStore(jokestate)
-
-const App = () => {
+const App = (props) => {
   const [joke,setJoke] = useState('')
   const inputContent = useField('text')
   const inputAuthor = useField('text')
@@ -20,15 +17,20 @@ const App = () => {
     const get = async() => {
       console.log('get')
       const jokes = await jokeService.getAll()
-      store.dispatch({
-        type: 'ADD',
+      const papps = await pappService.getAll()
+      props.store.dispatch({
+        type: 'JOKE_ADD',
         data: jokes
+      })
+      props.store.dispatch({
+        type: 'PAPP_ADD',
+        data: papps
       })
     }
    get()
-  },[])
+ },[props.store])
   //Placeholder Papps
-  const papps = [
+  /*const papps = [
     {
       id: 1,
       p:"/static/father1.png",
@@ -44,10 +46,10 @@ const App = () => {
       p:"/static/father3.png",
       votes: 0
     }
-  ]
+  ]*/
   //the function to fetch a random joke
   const handlePapp = () => {
-    const jokes = store.getState()
+    const jokes = props.store.getState().joke
     const rand = Math.floor(Math.random()*(jokes.length))
     setJoke(jokes[rand])
   }
@@ -62,9 +64,9 @@ const App = () => {
       <button onClick={handlePapp}>Random favorit i repris</button>
       <Joke joke={joke} />
       <p>Skicka in en favorit!</p>
-      <JokeForm store={store} inputContent={inputContent} inputAuthor={inputAuthor} />
+      <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
       <br></br>
-      <PappContainer papps={papps} />
+      <PappContainer store={props.store} />
     </div>
   )
 }

@@ -12,7 +12,7 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
     })
     console.log(joke)
     store.dispatch({
-      type: 'ADD',
+      type: 'JOKE_ADD',
       data: joke
     })
     inputContent.reset()

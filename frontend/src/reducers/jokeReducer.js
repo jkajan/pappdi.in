@@ -3,7 +3,7 @@ const initialState = []
 const jokeStore = (state = initialState, action) => {
   console.log(action)
   switch(action.type) {
-    case 'ADD':
+    case 'JOKE_ADD':
       return state.concat(action.data)
     default:
   }

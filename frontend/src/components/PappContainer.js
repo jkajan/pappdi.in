@@ -2,12 +2,12 @@ import React from 'react'
 import Papp from './Papp'
 
 //the container for all Papps
-const PappContainer = ({papps}) => {
+const PappContainer = ({store}) => {
   return (
     <div>
       <header className="header">Rösta på din favoritpapp!</header>
       <div className="wrapper">
-        {papps.map(p => <Papp key={p.id} papp={p} />)}
+        {store.getState().papp.map(p => <Papp key={p.id} papp={p} />)}
       </div>
     </div>
   )
