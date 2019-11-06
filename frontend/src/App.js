@@ -29,24 +29,6 @@ const App = (props) => {
     }
    get()
  },[props.store])
-  //Placeholder Papps
-  /*const papps = [
-    {
-      id: 1,
-      p:"/static/father1.png",
-      votes: 0
-    },
-    {
-      id: 2,
-      p:"/static/father2.png",
-      votes: 0
-    },
-    {
-      id: 3,
-      p:"/static/father3.png",
-      votes: 0
-    }
-  ]*/
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = props.store.getState().joke
