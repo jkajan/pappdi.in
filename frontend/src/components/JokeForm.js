@@ -29,7 +29,7 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
         <label className="marginLeft">Vem i frick e du?!</label><br></br>
         <input className="author" value={inputAuthor.value} onChange={inputAuthor.onChange}></input>
         <br></br>
-        <button className="marginLeft" type="submit">Submit</button>
+        <button className="button primary" type="submit">Submit</button>
       </form>
     </div>
   )

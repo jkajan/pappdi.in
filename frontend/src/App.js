@@ -42,8 +42,8 @@ const App = (props) => {
     <div className="grid-x grid-margin-x">
       <div className="cell large-8 large-offset-2">Hello Papps! Välkommen till pappdi.in!</div>
       <div className="cell large-8 large-offset-2">
-        <button onClick={handleGen}>Generera ett 'Papp' skämt!</button>
-        <button onClick={handlePapp}>Random favorit i repris</button>
+        <button className="button primary" type="button" onClick={handleGen}>Generera ett 'Papp' skämt!</button>
+        <button className="button primary" type="button" onClick={handlePapp}>Random favorit i repris</button>
       </div>
 	  <div className="cell large-8 large-offset-2">
 		  <Joke joke={joke} />
