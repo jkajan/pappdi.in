@@ -6,7 +6,7 @@ const Papp = ({papp, show, click, handleVote}) => {
     <div className={click.click} onClick={() => handleVote(papp)}>
       <img src={papp.p} alt="Din far borde synas här!"></img>
     </div>
-    <div style={show}>votes: {papp.votes}</div>
+    <span className="label success" style={show}>Röster: {papp.votes}</span>
     </div>
   )
 }
