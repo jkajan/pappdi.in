@@ -44,7 +44,7 @@ const App = (props) => {
 		  <div className="media-object">
 			  <div className="media-object-section">
 				<div className="thumbnail">
-					<img src="pipe-48.png"></img>
+					<img src="pipe-48.png" alt="Papps piipu"></img>
 				</div>
 			  </div>
 		  <div className="media-object-section">
