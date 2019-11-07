@@ -10,4 +10,18 @@ pappRouter.get('/', async(req,res,next) => {
   }
 })
 
+pappRouter.put('/:id', async(req,res,next) => {
+  try {
+    const papp = req.body
+    const updatedPapp = await Papp.findByIdAndUpdate(
+      req.params.id,
+      papp,
+      {new: true}
+    )
+    res.json(updatedPapp.toJSON())
+  } catch (exception) {
+    next(exception)
+  }
+})
+
 module.exports = pappRouter
