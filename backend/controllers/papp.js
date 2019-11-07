@@ -12,7 +12,11 @@ pappRouter.get('/', async(req,res,next) => {
 
 pappRouter.put('/:id', async(req,res,next) => {
   try {
-    const papp = req.body
+    const orig = await Papp.findById(req.params.id)
+    const papp = {
+      p: orig.p,
+      votes: orig.votes + 1
+    }
     const updatedPapp = await Papp.findByIdAndUpdate(
       req.params.id,
       papp,

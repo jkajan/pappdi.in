@@ -9,11 +9,7 @@ const PappContainer = ({store}) => {
   const show = { display: voted ? '' : 'none' }
   const handleVote = async(papp) => {
     try {
-      const nPapp = {
-        p: papp.p,
-        votes: papp.votes + 1
-      }
-      await pappService.update(papp.id, nPapp)
+      await pappService.vote(papp.id)
       store.dispatch({
         type:'PAPP_VOTE',
         data: papp.id
