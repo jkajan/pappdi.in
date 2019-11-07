@@ -46,12 +46,12 @@ const App = (props) => {
     }
     const textArr = jokestr.split(' ')
     for (let i = 0; i < textArr.length; i++) {
-      let word = textArr[i].toLowerCase().replace(/[\W_]/, "")
+      let word = textArr[i].toLowerCase()
       if (!markovChain[word]) {
         markovChain[word] = []
         }
       if (textArr[i + 1]) {
-        markovChain[word].push(textArr[i + 1].toLowerCase().replace(/[\W_]/, ""));
+        markovChain[word].push(textArr[i + 1].toLowerCase());
       }
     }
     const words = Object.keys(markovChain)
