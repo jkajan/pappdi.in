@@ -24,8 +24,6 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
       <h2>Skick in en favorit!</h2>
 	  <p>Issint skriv så hemska saker. Lag int Papp diin besviken.</p>
       <form onSubmit={handleSubmit}>
-	  	<div className="grid-container">
-	  	<div className="grid-x grid-padding-x">
 	  	<div className="medium-12 cell">
 	  		<label>Riktigt bra läppä
 			<textarea name="input" placeholder="Hähä" rows="10" columns="50" onChange={inputContent.onChange} value={inputContent.value}>
@@ -35,8 +33,6 @@ const JokeForm = ({store, inputContent, inputAuthor}) => {
 			<input className="author" placeholder="Papp diin" type="text" value={inputAuthor.value} onChange={inputAuthor.onChange}></input>
 	  		</label>
 			<button className="button primary" type="submit">Submit</button>
-	  	</div>
-	  	</div>
 	  	</div>
       </form>
     </div>

@@ -25,13 +25,16 @@ const PappContainer = ({store}) => {
   }
 
   return (
-    <div>
-      <header className="header">Rösta på din favoritpapp!</header>
-      <div className="wrapper">
-        {store.getState().papp.map(p => <Papp
-          key={p.id} papp={p} show={show} click={click} handleVote={handleVote} />)}
-      </div>
+	  <div className="grid-container">
+	  <div className="grid-x">
+    <div className="cell medium-12">
+      <h2>Röst på din favoritpapp!</h2>
     </div>
+      {store.getState().papp.map(p => <Papp
+        key={p.id} papp={p} show={show} click={click} handleVote={handleVote} />)}
+    </div>
+    </div>
+
   )
 }
 
