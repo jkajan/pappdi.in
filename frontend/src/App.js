@@ -41,8 +41,17 @@ const App = (props) => {
   return (
     <div className="grid-x grid-margin-x">
       <div className="cell large-8 large-offset-2">
-	  	<h1>pappdi.in</h1>
-	  	<p>Kom int hiid å lär Papp ti ha roulit.</p>
+		  <div className="media-object">
+			  <div className="media-object-section">
+				<div className="thumbnail">
+					<img src="pipe-48.png"></img>
+				</div>
+			  </div>
+		  <div className="media-object-section">
+			<h1>pappdi.in</h1>
+			<p>Kom int hiid å lär Papp ti ha roulit.</p>
+		  </div>
+	  </div>
 	</div>
       <div className="cell large-8 large-offset-2">
         <button className="button primary" type="button" onClick={handleGen}>Generér ett 'Papp'-skämt!</button>
@@ -52,6 +61,8 @@ const App = (props) => {
 		  <Joke joke={joke} />
 		  <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
 		  <br></br>
+	  </div>
+	  <div className="cell large-8 large-offset-2">
 		  <PappContainer store={props.store} />
 	  </div>
     </div>
