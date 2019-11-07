@@ -15,7 +15,6 @@ const App = (props) => {
   //useEffect that fetches jokes from the backend
   useEffect(() => {
     const get = async() => {
-      console.log('get')
       const jokes = await jokeService.getAll()
       const papps = await pappService.getAll()
       props.store.dispatch({
