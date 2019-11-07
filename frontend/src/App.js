@@ -8,10 +8,9 @@ import pappService from './services/papp'
 import './App.css'
 
 const App = (props) => {
-  const [joke,setJoke] = useState('')
+  const [joke,setJoke] = useState([])
   const inputContent = useField('text')
   const inputAuthor = useField('text')
-  //TODO: fundera på varför min MONGODB_URI e whack
   //useEffect that fetches jokes from the backend
   useEffect(() => {
     const get = async() => {
@@ -31,8 +30,11 @@ const App = (props) => {
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = props.store.getState().joke
-    const rand = Math.floor(Math.random()*(jokes.length))
-    setJoke(jokes[rand])
+    let rand = Math.floor(Math.random()*(jokes.length))
+    while (joke[1] && joke[1]===rand ) {
+      rand = Math.floor(Math.random()*(jokes.length))
+    }
+    setJoke([jokes[rand],rand])
   }
   //the function to generate a joke
   const handleGen = () => {
@@ -45,7 +47,7 @@ const App = (props) => {
         <button onClick={handleGen}>Generera ett 'Papp' skämt!</button>
         <button onClick={handlePapp}>Random favorit i repris</button>
       </div>
-      <Joke joke={joke} />
+      <Joke joke={joke[0]} />
       <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
       <br></br>
       <PappContainer store={props.store} />
