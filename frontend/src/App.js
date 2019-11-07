@@ -58,7 +58,7 @@ const App = (props) => {
     let word = words[Math.floor(Math.random() * words.length)]
     let result = ''
     let newWord = ''
-    for (let i = 0; i < words.length; i++ ) {
+    for (let i = 0; i < 100; i++ ) {
       result += word + ' '
       newWord =  markovChain[word][Math.floor(Math.random() * markovChain[word].length)]
       word = newWord
