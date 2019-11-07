@@ -4,7 +4,7 @@ mongoose.set('useUnifiedTopology', true )
 
 //DB Schema
 const jokeSchema = mongoose.Schema({
-  content: String,
+  content: {type: String, required: [true, 'Sätt nu ens en bilaga!']} ,
   author: String
 })
 
