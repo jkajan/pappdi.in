@@ -64,9 +64,7 @@ const App = (props) => {
       word = newWord
       if (!word || !markovChain.hasOwnProperty(word)) word = words[Math.floor(Math.random() * words.length)]
     }
-    console.log(result)
     setJoke([{content: result,author: "Markov"},words.length])
-    console.log(joke)
   }
 
   return (
