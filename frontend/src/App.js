@@ -60,7 +60,6 @@ const App = (props) => {
 	  <div className="cell large-8 large-offset-2">
 		  <Joke joke={joke} />
 		  <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
-		  <br></br>
 	  </div>
 	  <div className="cell large-8 large-offset-2">
 		  <PappContainer store={props.store} />
