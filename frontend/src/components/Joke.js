@@ -4,12 +4,10 @@ import React from 'react'
 const Joke = ({joke}) => {
   if (joke) {
     return(
-		<div className="callout primary">
-			<p className="jokeContent">{joke.content}<br></br>Submitted by: {joke.author}</p>
-		</div>
+      <div className="jokeContent">{joke.content}<br></br>Submitted by: {joke.author}</div>
     )
   } else {
-    return(<p></p>)
+    return(<div></div>)
   }
 }
 

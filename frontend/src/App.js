@@ -40,12 +40,9 @@ const App = (props) => {
   }
   return (
     <div className="grid-x grid-margin-x">
+      <div className="cell large-8 large-offset-2">Hello Papps! Välkommen till pappdi.in!</div>
       <div className="cell large-8 large-offset-2">
-	  	<h1>pappdi.in</h1>
-	  	<p>Kom int hiid å lär Papp ti ha roulit.</p>
-	</div>
-      <div className="cell large-8 large-offset-2">
-        <button className="button primary" type="button" onClick={handleGen}>Generér ett 'Papp'-skämt!</button>
+        <button className="button primary" type="button" onClick={handleGen}>Generera ett 'Papp' skämt!</button>
         <button className="button primary" type="button" onClick={handlePapp}>Random favorit i repris</button>
       </div>
 	  <div className="cell large-8 large-offset-2">
