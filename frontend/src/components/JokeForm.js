@@ -5,18 +5,22 @@ import jokeService from '../services/joke'
 const JokeForm = ({store, inputContent, inputAuthor}) => {
 
   const handleSumbit = async(event) => {
-    event.preventDefault()
-    const joke = await jokeService.create({
-      content: event.target[0].value,
-      author: event.target[1].value
-    })
-    console.log(joke)
-    store.dispatch({
-      type: 'JOKE_ADD',
-      data: joke
-    })
-    inputContent.reset()
-    inputAuthor.reset()
+    try{
+      event.preventDefault()
+      const joke = await jokeService.create({
+        content: event.target[0].value,
+        author: event.target[1].value
+      })
+      console.log(joke)
+      store.dispatch({
+        type: 'JOKE_ADD',
+        data: joke
+      })
+      inputContent.reset()
+      inputAuthor.reset()
+    } catch (exception) {
+      console.log(exception)
+    }
   }
 
   return(

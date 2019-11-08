@@ -1,11 +1,18 @@
 mongoose = require('mongoose')
 mongoose.set('useFindAndModify', false)
 mongoose.set('useUnifiedTopology', true )
+const uniqueValidator = require('mongoose-unique-validator')
 
 //DB Schema
 const jokeSchema = mongoose.Schema({
-  content: String,
-  author: String
+  content: {
+    type: String,
+    required: [true, 'Sätt nu ens en bilaga!'],
+    minlength: 10,
+    maxlength: 255,
+    unique: true
+  },
+  author: {type: String, required: [true, 'Säg nu vem du e!']}
 })
 
 //parser to get rid of unnecessary mongodb fields
