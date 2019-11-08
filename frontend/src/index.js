@@ -5,7 +5,6 @@ import jokeReducer from './reducers/jokeReducer'
 import pappReducer from './reducers/pappReducer'
 import App from './App'
 import 'foundation-sites/dist/css/foundation.min.css'
-import $ from 'jquery'
 
 const reducer = combineReducers({
   joke: jokeReducer,
