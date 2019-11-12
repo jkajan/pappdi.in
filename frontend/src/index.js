@@ -4,7 +4,6 @@ import { createStore, combineReducers } from 'redux'
 import jokeReducer from './reducers/jokeReducer'
 import pappReducer from './reducers/pappReducer'
 import App from './App'
-import $ from 'jquery'
 import '../node_modules/foundation-sites/_build/assets/css/foundation.css'
 
 const reducer = combineReducers({
