@@ -5,7 +5,6 @@ import PappContainer from './components/PappContainer'
 import { useField } from './hooks'
 import jokeService from './services/joke'
 import pappService from './services/papp'
-import './App.css'
 
 const App = (props) => {
   const [joke,setJoke] = useState('')
@@ -42,10 +41,8 @@ const App = (props) => {
     <div className="grid-x grid-margin-x">
       <div className="cell large-8 large-offset-2">
 		  <div className="media-object">
-			  <div className="media-object-section">
-				<div className="thumbnail">
-					<img src="pipe-48.png" alt="Papps piipu"></img>
-				</div>
+			  <div className="media-object-section align-self-middle">
+				<img src="pipe-96.png" alt="Papps piipu"></img>
 			  </div>
 		  <div className="media-object-section">
 			<h1>pappdi.in</h1>
