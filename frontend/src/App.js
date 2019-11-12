@@ -7,10 +7,9 @@ import jokeService from './services/joke'
 import pappService from './services/papp'
 
 const App = (props) => {
-  const [joke,setJoke] = useState('')
+  const [joke,setJoke] = useState([])
   const inputContent = useField('text')
   const inputAuthor = useField('text')
-  //TODO: fundera på varför min MONGODB_URI e whack
   //useEffect that fetches jokes from the backend
   useEffect(() => {
     const get = async() => {
@@ -30,13 +29,43 @@ const App = (props) => {
   //the function to fetch a random joke
   const handlePapp = () => {
     const jokes = props.store.getState().joke
-    const rand = Math.floor(Math.random()*(jokes.length))
-    setJoke(jokes[rand])
+    let rand = Math.floor(Math.random()*(jokes.length))
+    while (joke[1] && joke[1]===rand ) {
+      rand = Math.floor(Math.random()*(jokes.length))
+    }
+    setJoke([jokes[rand],rand])
   }
   //the function to generate a joke
-  const handleGen = () => {
-    console.log('NYI')
+  const markovMe = () => {
+    const markovChain = {}
+    const jokes = props.store.getState().joke
+    let jokestr = ""
+    for (let j = 0; j <jokes.length; j++) {
+      jokestr += jokes[j].content
+    }
+    const textArr = jokestr.split(' ')
+    for (let i = 0; i < textArr.length; i++) {
+      let word = textArr[i].toLowerCase()
+      if (!markovChain[word]) {
+        markovChain[word] = []
+        }
+      if (textArr[i + 1]) {
+        markovChain[word].push(textArr[i + 1].toLowerCase());
+      }
+    }
+    const words = Object.keys(markovChain)
+    let word = words[Math.floor(Math.random() * words.length)]
+    let result = ''
+    let newWord = ''
+    for (let i = 0; i < 100; i++ ) {
+      result += word + ' '
+      newWord =  markovChain[word][Math.floor(Math.random() * markovChain[word].length)]
+      word = newWord
+      if (!word || !markovChain.hasOwnProperty(word)) word = words[Math.floor(Math.random() * words.length)]
+    }
+    setJoke([{content: result,author: "Markov"},words.length])
   }
+
   return (
     <div className="grid-x grid-margin-x">
       <div className="cell large-8 large-offset-2">
@@ -51,11 +80,11 @@ const App = (props) => {
 	  </div>
 	</div>
       <div className="cell large-8 large-offset-2">
-        <button className="button primary" type="button" onClick={handleGen}>Generér ett 'Papp'-skämt!</button>
+        <button className="button primary" type="button" onClick={markovMe}>Generér ett 'Papp'-skämt!</button>
         <button className="button primary" type="button" onClick={handlePapp}>Random favorit i repris</button>
       </div>
 	  <div className="cell large-8 large-offset-2">
-		  <Joke joke={joke} />
+		  <Joke joke={joke[0]} />
 		  <JokeForm store={props.store} inputContent={inputContent} inputAuthor={inputAuthor} />
 	  </div>
 	  <div className="cell large-8 large-offset-2">

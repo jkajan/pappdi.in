@@ -6,9 +6,9 @@ const getAll = async() => {
   return res.data
 }
 
-const update = (id, newObject) => {
-  const request = axios.put(`${ baseUrl }/${id}`, newObject)
+const vote = (id) => {
+  const request = axios.put(`${ baseUrl }/${id}`, "VOTE")
   return request.then(response => response.data)
 }
 
-export default { getAll, update }
+export default { getAll, vote }
