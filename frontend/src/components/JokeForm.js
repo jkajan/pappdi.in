@@ -4,7 +4,7 @@ import jokeService from '../services/joke'
 
 const JokeForm = ({store, inputContent, inputAuthor}) => {
 
-  const handleSumbit = async(event) => {
+  const handleSubmit = async(event) => {
     try{
       event.preventDefault()
       const joke = await jokeService.create({
