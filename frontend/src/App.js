@@ -67,7 +67,7 @@ const App = (props) => {
   }
 
   return (
-    <div className="grid-x grid-margin-x">
+    <div className="grid-x grid-padding-x">
       <div className="cell large-8 large-offset-2">
 		  <div className="media-object">
 			  <div className="media-object-section align-self-middle">
