@@ -4,3 +4,10 @@
 
 @include foundation-everything;
 
+.click {
+  pointer-events: auto;
+}
+
+.noclick {
+  pointer-events: none;
+}

@@ -330,7 +330,7 @@ label {
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.8;
-  color: #3B3228; }
+  color: #f4bc87; }
   label.middle {
     margin: 0 0 1rem;
     padding: 0.5625rem 0; }
@@ -3476,7 +3476,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .tabs.primary {
   background: #d0c8c6; }
   .tabs.primary > li > a {
-    color: #ff0000; }
+    color: #0a0a0a; }
     .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
       background: #c7bdbb; }
 
@@ -3743,8 +3743,8 @@ a.thumbnail {
     display: block;
     width: 100%;
     height: 2px;
-    background: #ff0000;
-    box-shadow: 0 7px 0 #ff0000, 0 14px 0 #ff0000;
+    background: #0a0a0a;
+    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
     content: ''; }
   .menu-icon.dark:hover::after {
     background: #8a8a8a;
@@ -5075,5 +5075,11 @@ html.is-reveal-open {
     .hide-for-landscape,
     .show-for-portrait {
       display: block !important; } }
+
+.click {
+  pointer-events: auto; }
+
+.noclick {
+  pointer-events: none; }
 
 /*# sourceMappingURL=foundation.css.map */
