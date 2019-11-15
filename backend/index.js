@@ -14,7 +14,6 @@ if (config.NODE_ENV === 'production') {
 	const http = require('http')
 	const server = http.createServer(app)
 }
-console.log(`NODE_ENV = ${config.NODE_ENV}`)
 app.listen(config.PORT, () => {
   console.log(`Server running on port ${config.PORT}`)
 })
